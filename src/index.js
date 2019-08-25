@@ -50,7 +50,7 @@ class InfiniteUsers extends Component {
   loadUsers = () => {
     this.setState({ isLoading: true }, () => {
       request
-        .get('https://randomuser.me/api/?results=10')
+        .get('https://randomuser.me/api/?results=100')
         .then((results) => {
           // Creates a massaged array of user data
           const nextUsers = results.body.results.map(user => ({
@@ -66,7 +66,7 @@ class InfiniteUsers extends Component {
             // Note: Depending on the API you're using, this value may
             // be returned as part of the payload to indicate that there
             // is no additional data to be loaded
-            hasMore: (this.state.users.length < 100),
+            hasMore: (this.state.users.length < 1000),
             isLoading: false,
             users: [
               ...this.state.users,
@@ -95,7 +95,7 @@ class InfiniteUsers extends Component {
       <div>
         <h1>Infinite Users!</h1>
         <p>Scroll down to load more!!</p>
-        {users.map(user => (
+        {users.map((user, index) => (
           <Fragment key={user.username}>
             <hr />
             <div style={{ display: 'flex' }}>
@@ -115,6 +115,7 @@ class InfiniteUsers extends Component {
                 </h2>
                 <p>Name: {user.name}</p>
                 <p>Email: {user.email}</p>
+                <p>Fake User#: {index}</p>
               </div>
             </div>
           </Fragment>

@@ -1,3 +1,6 @@
+ACCESS PROJECT AT: http://inf-scroll-s3bucket-91kqgbhyd4ke.s3-website-us-west-1.amazonaws.com/
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
