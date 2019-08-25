@@ -16,7 +16,7 @@ export class Header extends React.Component {
         className="3"
         style={{
           height: "50px",
-          textAlign: "right",
+          textAlign: "justify",
           fontSize: 20,
           textShadowRadius: 1000,
           fontFamily: "monospace",
